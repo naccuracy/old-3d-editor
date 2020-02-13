@@ -6,6 +6,7 @@
 #include <gl\gl.h>
 #include <gl\glu.h>
 #include "geom.h"
+#include <string>
 //
 int flagpoint=0;
 int nnn;
@@ -23,56 +24,6 @@ int GetStringFromFile(FILE *f, char str[256])
 	}
 	return 1;
 }
-//Stroka
-class Stroka
-{
-public:
-	char *str;
-
-	Stroka()
-	{
-		str=NULL;
-	};
-	int Length()const{return strlen(str);};
-	Stroka(const Stroka &S)
-	{
-		int n;
-		n=S.Length();
-		str=new char[n+1];
-		strcpy_s(str,n+1,S.str);
-	};
-	Stroka(const char *Str)
-	{
-		int n=strlen(Str);
-		str=new char[n+1];
-		strcpy_s(str,n+1,Str);
-	};
-	void Free()
-	{
-		if(str!=NULL)delete str;
-	};
-	~Stroka()
-	{
-		Free();
-	};
-	void operator =(const Stroka &S)
-	{
-		Free();
-		int n=S.Length();
-		str=new char[n+1];
-		strcpy_s(str,n+1,S.str);
-		return;
-	};
-
-	void operator =(const char *S)
-	{
-		Free();
-		int n=strlen(S);
-		str=new char[n+1];
-		strcpy_s(str,n+1,S);
-		return;
-	};
-};
 //
 //Project
 class Project
@@ -80,9 +31,9 @@ class Project
 
 public:
 	//data
-	vector<Stroka> RingNames;
+	vector<string> RingNames;
 	Ring_array Rings;
-	vector<Stroka> MeshNames;
+	vector<string> MeshNames;
 	vector<Mesh> Meshes;
 	int SelectedR, SelectedM;
 	//members
@@ -150,7 +101,6 @@ public:
 		Ring ri;
 		Mesh me;
 		int i, j, n,m;
-		Stroka stroka;
 		char str[256];
 		FILE *f=NULL;
 		vector2f v;
