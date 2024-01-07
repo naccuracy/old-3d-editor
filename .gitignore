@@ -1,0 +1,9 @@
+libs
+a_builds
+2d3d
+2d3d.exe
+SDL2.dll
+src/imgui
+log.txt
+imgui.ini
+rc

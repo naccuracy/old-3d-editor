@@ -1,0 +1,428 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DIPLOM              ICON                    "Diplom.ico"
+IDI_SMALL               ICON                    "small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_DIPLOM MENU 
+BEGIN
+    POPUP "Проект"
+    BEGIN
+        MENUITEM "Новый",                       IDM_NEW
+        MENUITEM "Сохранить",                   IDM_SAVE
+        MENUITEM "Загрузить",                   IDM_LOAD
+        MENUITEM "Выход",                       IDM_EXIT
+    END
+    POPUP "Инструменты"
+    BEGIN
+        MENUITEM "Редатор контуров",            IDM_CONTUR
+        MENUITEM "Редактор сеток",              IDM_MESH
+    END
+    POPUP "Помощь"
+    BEGIN
+        MENUITEM "Справка",                     IDM_ABOUT
+    END
+END
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "Объект"
+    BEGIN
+        POPUP "Создать"
+        BEGIN
+            MENUITEM "Сфера",                       ID_SPHERE
+            MENUITEM "Куб",                         ID_CUBE
+            MENUITEM "Конус",                       ID_CONE
+            MENUITEM "Цилиндр",                     ID_CILINDR
+            MENUITEM "Парамида",                    ID_PIRAMID
+            MENUITEM "Плоскость",                   ID_PLANE
+            MENUITEM SEPARATOR
+            MENUITEM "Булевксий объект",            ID_BOOL
+        END
+        MENUITEM "Загрузить",                   ID_LOADOBJECT
+        MENUITEM "Сохранить",                   ID_SAVEOBJECT
+        MENUITEM "Удалить",                     ID_DELOBJ
+        MENUITEM "Положение",                   ID_POS
+        MENUITEM "Координаты",                  32812
+    END
+    POPUP "Помощь"
+    BEGIN
+        MENUITEM "Справка",                     IDHELP
+    END
+END
+
+IDR_MENU2 MENU 
+BEGIN
+    POPUP "Файл"
+    BEGIN
+        MENUITEM "Открыть",                     IDS_OPEN
+        MENUITEM "Закрыть",                     IDS_CLOSE
+    END
+    POPUP "Контур"
+    BEGIN
+        MENUITEM "Выделить",                    IDS_SELECT
+        MENUITEM "Выдавить",                    IDS_EXTRUDE
+        MENUITEM "Удалить",                     IDS_DELETE
+    END
+    POPUP "Помощь"
+    BEGIN
+        MENUITEM "Справка",                     IDS_HELP
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_DIPLOM ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  22, 17, 230, 75
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "System"
+BEGIN
+    ICON            IDI_DIPLOM,IDC_MYICON,14,9,16,16
+    LTEXT           "Diplom Version 1.0",IDC_STATIC,49,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2010",IDC_STATIC,49,20,119,8
+    DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
+END
+
+IDD_OPENSAVE DIALOGEX 0, 0, 186, 57
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,35,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,35,50,14
+    LTEXT           "Путь к файлу",IDC_STATIC,7,6,91,8
+    EDITTEXT        IDC_EDIT1,7,15,172,14,ES_AUTOHSCROLL
+END
+
+IDD_EXTRUDE DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Выдавливание контуров"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,69,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,69,50,14
+    LTEXT           "Выберите контур",IDC_STATIC,7,7,60,8
+    EDITTEXT        IDC_EDIT1,7,47,172,14,ES_AUTOHSCROLL
+    LTEXT           "Имя объекта",IDC_STATIC,7,36,44,8
+    COMBOBOX        IDC_COMBO1,7,17,172,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_BOOL DIALOGEX 0, 0, 186, 135
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Создание булевкого объекта"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,114,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,114,50,14
+    EDITTEXT        IDC_EDIT1,7,95,172,13,ES_AUTOHSCROLL
+    LTEXT           "Имя объекта",IDC_STATIC,7,85,44,8
+    COMBOBOX        IDC_COMBO1,7,16,172,69,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,7,42,172,86,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO3,7,68,172,49,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Операнд А",IDC_STATIC,7,7,38,8
+    LTEXT           "Операнд Б",IDC_STATIC,7,30,37,8
+    LTEXT           "Операция",IDC_STATIC,7,58,34,8
+END
+
+IDD_SELECT DIALOGEX 0, 0, 186, 57
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,36,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,36,50,14
+    COMBOBOX        IDC_COMBO1,7,18,172,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Выберите объект из списка",IDC_STATIC,7,7,95,8
+END
+
+IDD_SPHERE DIALOGEX 0, 0, 186, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Сфера"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,129,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,129,50,14
+    LTEXT           "Радиус",IDC_STATIC,7,7,25,8
+    EDITTEXT        IDC_EDIT1,7,18,172,14,ES_AUTOHSCROLL
+    LTEXT           "Количество сегментов",IDC_STATIC,7,36,78,8
+    EDITTEXT        IDC_EDIT2,7,47,172,14,ES_AUTOHSCROLL
+    LTEXT           "Количество слоев",IDC_STATIC,7,65,62,8
+    EDITTEXT        IDC_EDIT3,7,77,172,14,ES_AUTOHSCROLL
+    LTEXT           "Имя объекта",IDC_STATIC,7,95,44,8
+    EDITTEXT        IDC_EDIT4,7,108,172,14,ES_AUTOHSCROLL
+END
+
+IDD_CUBE DIALOGEX 0, 0, 188, 139
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Куб"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,131,117,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,117,50,14
+    EDITTEXT        IDC_EDIT1,43,18,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,43,42,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,43,65,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,97,18,84,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,97,42,84,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,97,65,84,14,ES_AUTOHSCROLL
+    LTEXT           "Длина",IDC_STATIC,7,18,22,8
+    LTEXT           "Ширина",IDC_STATIC,7,42,28,8
+    LTEXT           "Высота",IDC_STATIC,7,65,26,8
+    LTEXT           "Количество сегментов",IDC_STATIC,97,7,84,8
+    LTEXT           "Имя объекта",IDC_STATIC,7,86,44,8
+    EDITTEXT        IDC_EDIT7,7,98,174,14,ES_AUTOHSCROLL
+END
+
+IDD_CONE DIALOGEX 0, 0, 186, 121
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,100,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,100,50,14
+    LTEXT           "Радиус",IDC_STATIC,7,25,25,8
+    LTEXT           "Высота",IDC_STATIC,7,49,26,8
+    EDITTEXT        IDC_EDIT1,36,18,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,36,42,48,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,90,18,88,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,90,42,88,14,ES_AUTOHSCROLL
+    LTEXT           "Количество сегментов",IDC_STATIC,91,7,78,8
+    EDITTEXT        IDC_EDIT5,7,76,172,14,ES_AUTOHSCROLL
+    LTEXT           "Имя объекта",IDC_STATIC,7,64,44,8
+END
+
+IDD_Pos DIALOGEX 0, 0, 250, 129
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Изменение положения"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,18,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,49,18,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,91,18,40,14,ES_AUTOHSCROLL
+    LTEXT           "Координаты центра редактировния",IDC_STATIC,7,7,124,8
+    LTEXT           "Перемещение на вектор",IDC_STATIC,7,36,84,8
+    EDITTEXT        IDC_EDIT4,7,49,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,49,49,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,91,49,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Перемещение",IDC_BUTTON1,133,49,72,14
+    LTEXT           "Вращение вокруг вектора на угол A",IDC_STATIC,7,66,180,8
+    EDITTEXT        IDC_EDIT7,7,79,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,49,79,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,91,79,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,151,79,40,14,ES_AUTOHSCROLL
+    LTEXT           "A:",IDC_STATIC,139,81,8,8
+    PUSHBUTTON      "Поворот",IDC_BUTTON2,193,79,50,14
+    LTEXT           "Неравномерное масштабирование",IDC_STATIC,7,97,116,8
+    EDITTEXT        IDC_EDIT11,7,108,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,49,108,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT13,91,108,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Масштабировать",IDC_BUTTON3,133,108,78,14
+END
+
+IDD_DIALOG1 DIALOGEX 0, 0, 188, 76
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,63,55,58,14
+    PUSHBUTTON      "Следующая",IDC_BUTTON1,131,55,50,14
+    PUSHBUTTON      "Предыдущая",IDC_BUTTON2,7,55,50,14
+    EDITTEXT        IDC_EDIT1,19,31,39,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,79,31,41,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,139,31,42,14,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,67,31,8,8
+    LTEXT           "Z",IDC_STATIC,127,31,8,8
+    LTEXT           "X",IDC_STATIC,7,31,8,8
+    EDITTEXT        IDC_EDIT4,19,7,58,14,ES_AUTOHSCROLL
+    LTEXT           "№",IDC_STATIC,7,13,10,8
+    PUSHBUTTON      "Перейти",IDC_BUTTON3,79,7,50,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPENSAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_EXTRUDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_BOOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_SELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_SPHERE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_CUBE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_CONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_Pos, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "Diplom"
+    IDC_DIPLOM              "DIPLOM"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
